@@ -76,8 +76,6 @@ The user can create their own game.
 
 The user should be able to invite other people to their room/game.
 
-The user should be able to see the leaderboard after the game is finished.
-
 ## <b>Tech Stack</b>
 
 C#
