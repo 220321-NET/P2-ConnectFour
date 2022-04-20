@@ -1,9 +1,11 @@
 Connect4 Game
 
 Overview
+
 Your childhood game of Connect4 makes its comeback. Call your friends and get ready to battle it out for the number 1 spot. Players will be ranked for all to see their genius.
 
 Tables
+
 Lobby
 Users
 Player Table (Access to game)
@@ -11,6 +13,7 @@ Game Table
 Table
 
 User Stories
+
 The user should be able to sign up and login
 The user should be able to pick color (in sign up).
 The user should be able to access settings (color changes, individual win percentage).
@@ -31,6 +34,7 @@ The user should be able to see the rankings after the game is finished.
 
 
 MVP Goals
+
 The user should be able to sign up and login
 The user should be able to pick color (in sign up).
 The user should be able to access settings (color changes, individual win percentage).
@@ -43,6 +47,7 @@ Leaderboard scores will be based on wins.
 
 
 Stretch Goals
+
 The user (admin) could add new colors and block players.
 Log player actions.
 Deserialize player logs.
@@ -53,6 +58,7 @@ The user should be able to invite other people to their room/game.
 The user should be able to see the leaderboard after the game is finished.
 
 Tech Stack
+
 C#
 HTML
 CSS
@@ -62,5 +68,6 @@ Angular
 ASP.net
 ADO.net
 
-Connect4 ERD
+ERD
+
 https://lucid.app/lucidchart/ed18d536-58eb-4773-91e5-24458dbedf62/edit?invitationId=inv_fa73ec60-4497-440a-8dcd-5d3174344605&page=0_0#
