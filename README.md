@@ -44,7 +44,7 @@ The user should be able to see the rankings after the game is finished.
 
 The user should be able to sign up and login
 
-The user should be able to access settings (color changes, individual win percentage).
+The user should be able to access settings their profile page (Gravatar).
 
 The user should be able view other player profile.
 
