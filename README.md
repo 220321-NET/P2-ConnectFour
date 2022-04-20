@@ -1,10 +1,10 @@
-#Connect4 Game
+# Connect4 Game
 
-##<b>Overview</b>
+## <b>Overview</b>
 
 Your childhood game of Connect4 makes its comeback. Call your friends and get ready to battle it out for the number 1 spot. Players will be ranked for all to see their genius.
 
-##<b>User Stories</b>
+## <b>User Stories</b>
 
 The user should be able to sign up and login
 
@@ -40,7 +40,7 @@ The user should be able to invite other people to their room/game.
 
 The user should be able to see the rankings after the game is finished.
 
-##<b>MVP Goals</b>
+## <b>MVP Goals</b>
 
 The user should be able to sign up and login
 
@@ -60,9 +60,9 @@ The user should be able to see the rankings after the game is finished.
 
 Leaderboard scores will be based on wins.
 
-The user should be able to share wins on social media platforms (screenshot final board and post to social).
+The user should be able to share wins on social media platforms (screenshot final board and post to social)
 
-##<b>Stretch Goals</b>
+## <b>Stretch Goals</b>
 
 The user (admin) could add new colors and block players.
 
@@ -78,7 +78,7 @@ The user should be able to invite other people to their room/game.
 
 The user should be able to see the leaderboard after the game is finished.
 
-##<b>Tech Stack</b>
+## <b>Tech Stack</b>
 
 C#
 
@@ -94,7 +94,7 @@ ASP.net
 
 ADO.net
 
-##<b>Tables</b>
+## <b>Tables</b>
 
 Player
 
@@ -106,6 +106,6 @@ Piece
 
 Ranking
 
-##<b>ERD</b>
+## <b>ERD</b>
 
 ![P2-ERD](https://github.com/220321-NET/P2-ConnectFour/blob/main/P2-Connect4-ERD.jpeg?raw=true)
