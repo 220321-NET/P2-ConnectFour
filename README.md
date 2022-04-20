@@ -60,7 +60,7 @@ The user should be able to see the rankings after the game is finished.
 
 Leaderboard scores will be based on wins.
 
-The user should be able to share wins on social media platforms (screenshot final board and post to social)
+The user should be able to share wins on social media platforms (screenshot final board and post to social).
 
 ##<b>Stretch Goals</b>
 
