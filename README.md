@@ -44,8 +44,6 @@ The user should be able to see the rankings after the game is finished.
 
 The user should be able to sign up and login
 
-The user should be able to pick color (in sign up).
-
 The user should be able to access settings (color changes, individual win percentage).
 
 The user should be able view other player profile.
@@ -69,6 +67,8 @@ The user (admin) could add new colors and block players.
 Log player actions.
 
 Deserialize player logs.
+
+The user should be able to pick color (in sign up).
 
 The users should be able to talk to each other through a chat function.
 
