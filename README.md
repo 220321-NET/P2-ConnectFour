@@ -79,6 +79,8 @@ The user should be able to see the rankings after the game is finished.
 
 Leaderboard scores will be based on wins.
 
+The user should be able to share wins on social media platforms (screenshot final board and post to social).
+
 
 <b>Stretch Goals</b>
 
@@ -88,8 +90,6 @@ The user (admin) could add new colors and block players.
 Log player actions.
 
 Deserialize player logs.
-
-The user should be able to share wins on social media platforms (screenshot final board and post to social).
 
 The users should be able to talk to each other through a chat function.
 
