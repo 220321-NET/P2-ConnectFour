@@ -9,6 +9,8 @@ public class DBRepository: IDBRepo
     public int CreateLobby()
     {
         //Grab GameID
+
+        //Create Board
     }
 
     public void UpdateRank(Board board)
