@@ -18,6 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<C4DBContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreDB")));
+builder.Services.AddScoped<IDBRepo, DBRepository>();
 
 var app = builder.Build();
 
