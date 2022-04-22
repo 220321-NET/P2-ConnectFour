@@ -1,10 +1,18 @@
 ﻿using Model;
+using System.Linq;
 
 namespace DL;
 
 
 public class DBRepository : IDBRepo
 {
+    private readonly C4DBContext _context;
+
+    public DBRepository(C4DBContext context)
+    {
+        _context = context;
+    }
+
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
     //          Family Member: Bailey
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
@@ -54,13 +62,21 @@ public class DBRepository : IDBRepo
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
     //Piece information
-    public Piece GetPiece()
+    public Piece GetPiece(int pieceID)
     {
-        return new Piece();
+        return _context.Pieces.FirstOrDefault(piece => piece.PieceID == pieceID);
     }
-    public Piece CreatePiece()
+
+    public List<Piece> GetAllPieces(int boardID)
     {
-        return new Piece();
+        return _context.Pieces.ToList();
+    }
+    public Piece CreatePiece(Piece piece)
+    {
+        _context.Pieces.Add(piece);
+        _context.SaveChanges();
+
+        return piece;
     }
 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
