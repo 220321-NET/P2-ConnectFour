@@ -6,7 +6,7 @@ namespace DL;
 public class DBContext
 {
     public DBContext() : base() { }
-    public DBContext(DbContextOptions options) : base(options) { }
+    public DBContext(DbContextOptions options) : base() { }
     public DbSet<Piece>? Pieces { get; set; }
 }
 
