@@ -7,11 +7,11 @@ public class DBContext
 {
     public DBContext() : base() { }
     public DBContext(DbContextOptions options) : base() { }
-    public DBSet<Board>? Boards{get;set;}
-    public DBSet<Lobby>? Lobbys{get;set;}
+    public DbSet<Board>? Boards { get; set; }
+    public DbSet<Lobby>? Lobbys { get; set; }
     public DbSet<Piece>? Pieces { get; set; }
-    public DBSet<Player>? Players{get;set;}
-    public DBSet<Ranking>? Rankings{get;set;}
+    public DbSet<Player>? Players { get; set; }
+    public DbSet<Ranking>? Rankings { get; set; }
 
 }
 
