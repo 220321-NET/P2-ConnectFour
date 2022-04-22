@@ -17,7 +17,7 @@ builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializ
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DBContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreDB")));
+builder.Services.AddDbContext<C4DBContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreDB")));
 
 var app = builder.Build();
 
