@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DL.Migrations
 {
     [DbContext(typeof(C4DBContext))]
-    [Migration("20220422192023_initial")]
+    [Migration("20220422212500_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,10 +31,10 @@ namespace DL.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("BoardID"));
 
-                    b.Property<int>("GameID")
+                    b.Property<int>("LobbyID")
                         .HasColumnType("integer");
 
-                    b.Property<int>("WinID")
+                    b.Property<int>("PlayerID")
                         .HasColumnType("integer");
 
                     b.HasKey("BoardID");
@@ -49,9 +49,6 @@ namespace DL.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("LobbyID"));
-
-                    b.Property<int>("GameID")
-                        .HasColumnType("integer");
 
                     b.Property<int>("Player1ID")
                         .HasColumnType("integer");

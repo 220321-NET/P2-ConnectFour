@@ -29,10 +29,10 @@ namespace DL.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("BoardID"));
 
-                    b.Property<int>("GameID")
+                    b.Property<int>("LobbyID")
                         .HasColumnType("integer");
 
-                    b.Property<int>("WinID")
+                    b.Property<int>("PlayerID")
                         .HasColumnType("integer");
 
                     b.HasKey("BoardID");
@@ -47,9 +47,6 @@ namespace DL.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("LobbyID"));
-
-                    b.Property<int>("GameID")
-                        .HasColumnType("integer");
 
                     b.Property<int>("Player1ID")
                         .HasColumnType("integer");
