@@ -32,23 +32,25 @@ public class DBRepository : IDBRepo
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
     //          Family Member: Gianny
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
+  
+   //Searching player profile before game 
+    public Player GetPlayer(string username)
+    {
+        return _context.Players.FirstOrDefault(player => player.Username == username);
+    }
 
     //Leaderboards
-    public List<Player> GetAllPlayers()
+    public List<Player> GetAllPlayers(int playerID)
     {
-        return new List<Player>();
+        return _context.Players.ToList();
     }
 
     //Handles signup
     public Player CreatePlayer(Player playerToCreate)
     {
-        return new Player();
-    }
-
-    //Searching player profile before game 
-    public Player GetPlayer(string username)
-    {
-        return new Player();
+        _context.Players.Add(playerToCreate);
+        _context.SaveChanges();
+        return playerToCreate;
     }
 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
