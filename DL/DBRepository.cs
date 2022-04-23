@@ -1,4 +1,5 @@
 ﻿using Model;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace DL;
@@ -18,9 +19,19 @@ public class DBRepository : IDBRepo
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
     //Ranking system
-    public void UpdateRank(Board board)
+    public void UpdateRank(Ranking rankToUpdate)
     {
+        _context.Rankings.Update(rankToUpdate);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
 
+    public List<Ranking> GetAllPlayerRanks() {
+        return _context.Rankings.AsNoTracking().ToList();
+    }
+
+    public int GetPlayerRank(Player playerRank) {
+        return _context.Rankings.AsNoTracking().FirstOrDefault(rank => rank.PlayerID == playerRank.PlayerID).Rank;
     }
 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_

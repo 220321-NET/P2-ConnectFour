@@ -11,7 +11,11 @@ public interface IDBRepo
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
     //Ranking system
-    public void UpdateRank(Board board);
+    public void UpdateRank(Ranking rankToUpdate);
+
+    public List<Ranking> GetAllPlayerRanks();
+    
+    public int GetPlayerRank(Player playerRank);
 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
