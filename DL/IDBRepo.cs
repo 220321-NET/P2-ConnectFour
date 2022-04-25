@@ -27,15 +27,15 @@ public interface IDBRepo
     //          Family Member: Gianny
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
-    //Leaderboards
-    public List<Player> GetAllPlayers();
-
-    //Handles signup
-    public Player CreatePlayer(Player playerToCreate);
-
     //Searching player profile before game 
     public Player GetPlayer(string username);
 
+    //Leaderboards
+    public List<Player> GetAllPlayers(int playerID);
+
+    //Handles signup
+    public Player CreatePlayer(Player playerToCreate);
+ 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
 
