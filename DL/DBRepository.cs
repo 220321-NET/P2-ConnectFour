@@ -71,14 +71,14 @@ public class DBRepository : IDBRepo
     {
         return _context.Pieces.ToList();
     }
-    public Piece CreatePiece(Piece piece)
+    public Piece CreatePiece(Piece pieceToCreate)
     {
-        _context.Pieces.Add(piece);
+        _context.Pieces.Add(pieceToCreate);
         _context.SaveChanges();
 
-        return piece;
+        return pieceToCreate;
     }
-
+    
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
 
@@ -90,15 +90,24 @@ public class DBRepository : IDBRepo
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
     //Board
-    public Board GetBoard()
+    public Board GetBoard(int lobbyId)
     {
         return new Board();
     }
 
-    //Create a lobby
-    public int CreateLobby()
+    public Board CreateBoard(Board boardToCreate)
     {
-        return -1;
+        _context.Boards.Add(boardToCreate);
+        _context.SaveChanges();
+        return boardToCreate;
+    }
+
+    //Create a lobby
+    public Lobby CreateLobby(Lobby lobbyToCreate)
+    {
+        _context.Lobbys.Add(lobbyToCreate);
+        _context.SaveChanges();
+        return lobbyToCreate;
     }
 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
