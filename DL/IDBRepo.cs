@@ -62,10 +62,12 @@ public interface IDBRepo
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
     //Board
-    public Board GetBoard();
+    public Board GetBoard(int lobbyId);
+
+    public Board CreateBoard(Board board);
 
     //Create a lobby
-    public int CreateLobby();
+    public Lobby CreateLobby(Lobby lobbyToCreate);
 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 

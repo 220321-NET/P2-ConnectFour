@@ -15,8 +15,8 @@ namespace DL.Migrations
                 {
                     BoardID = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    WinID = table.Column<int>(type: "integer", nullable: false),
-                    GameID = table.Column<int>(type: "integer", nullable: false)
+                    PlayerID = table.Column<int>(type: "integer", nullable: false),
+                    LobbyID = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,7 +29,6 @@ namespace DL.Migrations
                 {
                     LobbyID = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    GameID = table.Column<int>(type: "integer", nullable: false),
                     Player1ID = table.Column<int>(type: "integer", nullable: false),
                     Player2ID = table.Column<int>(type: "integer", nullable: false)
                 },
