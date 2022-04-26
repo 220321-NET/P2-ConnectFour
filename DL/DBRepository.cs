@@ -21,17 +21,19 @@ public class DBRepository : IDBRepo
     //Ranking system
     public void UpdateRank(Ranking rankToUpdate)
     {
-        _context.Rankings.Update(rankToUpdate);
+        _context.Rankings!.Update(rankToUpdate);
         _context.SaveChanges();
         _context.ChangeTracker.Clear();
     }
 
-    public List<Ranking> GetAllPlayerRanks() {
-        return _context.Rankings.AsNoTracking().ToList();
+    public List<Ranking> GetAllPlayerRanks()
+    {
+        return _context.Rankings!.AsNoTracking().ToList();
     }
 
-    public int GetPlayerRank(Player playerRank) {
-        return _context.Rankings.AsNoTracking().FirstOrDefault(rank => rank.PlayerID == playerRank.PlayerID).Rank;
+    public int GetPlayerRank(Player playerRank)
+    {
+        return _context.Rankings!.AsNoTracking().FirstOrDefault(rank => rank.PlayerID == playerRank.PlayerID)!.Rank;
     }
 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
@@ -43,23 +45,23 @@ public class DBRepository : IDBRepo
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
     //          Family Member: Gianny
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
-  
-   //Searching player profile before game 
+
+    //Searching player profile before game 
     public Player GetPlayer(string username)
     {
-        return _context.Players.FirstOrDefault(player => player.Username == username);
+        return _context.Players!.FirstOrDefault(player => player.Username == username)!;
     }
 
     //Leaderboards
     public List<Player> GetAllPlayers(int playerID)
     {
-        return _context.Players.ToList();
+        return _context.Players!.ToList();
     }
 
     //Handles signup
     public Player CreatePlayer(Player playerToCreate)
     {
-        _context.Players.Add(playerToCreate);
+        _context.Players!.Add(playerToCreate);
         _context.SaveChanges();
         return playerToCreate;
     }
@@ -77,21 +79,21 @@ public class DBRepository : IDBRepo
     //Piece information
     public Piece GetPiece(int pieceID)
     {
-        return _context.Pieces.FirstOrDefault(piece => piece.PieceID == pieceID);
+        return _context.Pieces!.FirstOrDefault(piece => piece.PieceID == pieceID)!;
     }
 
     public List<Piece> GetAllPieces(int boardID)
     {
-        return _context.Pieces.ToList();
+        return _context.Pieces!.ToList();
     }
     public Piece CreatePiece(Piece pieceToCreate)
     {
-        _context.Pieces.Add(pieceToCreate);
+        _context.Pieces!.Add(pieceToCreate);
         _context.SaveChanges();
 
         return pieceToCreate;
     }
-    
+
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
 
@@ -110,7 +112,7 @@ public class DBRepository : IDBRepo
 
     public Board CreateBoard(Board boardToCreate)
     {
-        _context.Boards.Add(boardToCreate);
+        _context.Boards!.Add(boardToCreate);
         _context.SaveChanges();
         return boardToCreate;
     }
@@ -118,7 +120,7 @@ public class DBRepository : IDBRepo
     //Create a lobby
     public Lobby CreateLobby(Lobby lobbyToCreate)
     {
-        _context.Lobbys.Add(lobbyToCreate);
+        _context.Lobbys!.Add(lobbyToCreate);
         _context.SaveChanges();
         return lobbyToCreate;
     }
