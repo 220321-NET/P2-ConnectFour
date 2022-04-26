@@ -24,9 +24,9 @@ public class PlayerController : ControllerBase
     }
     //Retrieves leaderboard
     [HttpGet("GetAllPlayers")]
-    public List<Player> GetAll(int playerID)
+    public List<Player> GetAll()
     {
-        return _dl.GetAllPlayers(playerID);
+        return _dl.GetAllPlayers();
     }
 
     [HttpPost("AddPlayer")]

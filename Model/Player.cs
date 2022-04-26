@@ -1,9 +1,9 @@
-
+using System.ComponentModel.DataAnnotations;
 namespace Model;
 
 public class Player
 {
-    // [Key]
+    //[Key]
     public int PlayerID { get; set; }
     public string? Username { get; set; }
     public string? Password { get; set; }

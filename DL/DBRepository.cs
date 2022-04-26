@@ -53,7 +53,7 @@ public class DBRepository : IDBRepo
     }
 
     //Leaderboards
-    public List<Player> GetAllPlayers(int playerID)
+    public List<Player> GetAllPlayers()
     {
         return _context.Players!.ToList();
     }
