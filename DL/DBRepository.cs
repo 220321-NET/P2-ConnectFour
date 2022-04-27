@@ -31,9 +31,9 @@ public class DBRepository : IDBRepo
         return _context.Rankings!.AsNoTracking().ToList();
     }
 
-    public int GetPlayerRank(Player playerRank)
+    public int GetPlayerRank(int playerId)
     {
-        return _context.Rankings!.AsNoTracking().FirstOrDefault(rank => rank.PlayerID == playerRank.PlayerID)!.Rank;
+        return _context.Rankings!.AsNoTracking().FirstOrDefault(rank => rank.PlayerID == playerId)!.Rank;
     }
 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
@@ -61,8 +61,18 @@ public class DBRepository : IDBRepo
     //Handles signup
     public Player CreatePlayer(Player playerToCreate)
     {
+        // Adds new player to player table
         _context.Players!.Add(playerToCreate);
         _context.SaveChanges();
+
+        Ranking newPlayerRanking = new Ranking();
+        newPlayerRanking.PlayerID = playerToCreate.PlayerID;
+        newPlayerRanking.Rank = 0; // Default starting rank
+
+        // Adds new player to ranking table
+        _context.Rankings!.Add(newPlayerRanking);
+        _context.SaveChanges();
+
         return playerToCreate;
     }
 
