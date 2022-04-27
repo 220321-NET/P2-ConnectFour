@@ -33,5 +33,11 @@ namespace Connect4API.Controllers
         {
             return _dl.CreateBoard(board);
         }
+
+        [HttpPut]
+        public void Put(Board board)
+        {
+            _dl.UpdateBoard(board);
+        }
     }
 }

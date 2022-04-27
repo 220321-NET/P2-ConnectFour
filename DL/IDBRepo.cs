@@ -14,7 +14,7 @@ public interface IDBRepo
     public void UpdateRank(Ranking rankToUpdate);
 
     public List<Ranking> GetAllPlayerRanks();
-    
+
     public int GetPlayerRank(int playerId);
 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
@@ -35,7 +35,7 @@ public interface IDBRepo
 
     //Handles signup
     public Player CreatePlayer(Player playerToCreate);
- 
+
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
 
@@ -64,7 +64,9 @@ public interface IDBRepo
     //Board
     public Board GetBoard(int lobbyId);
 
-    public Board CreateBoard(Board board);
+    public Board CreateBoard(Board boardToCreate);
+
+    public void UpdateBoard(Board boardToUpdate);
 
     //Create a lobby
     public Lobby CreateLobby(Lobby lobbyToCreate);
