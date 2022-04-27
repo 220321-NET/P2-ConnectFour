@@ -127,6 +127,13 @@ public class DBRepository : IDBRepo
         return boardToCreate;
     }
 
+    public void UpdateBoard(Board boardToUpdate)
+    {
+        _context.Boards!.Update(boardToUpdate);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
     //Create a lobby
     public Lobby CreateLobby(Lobby lobbyToCreate)
     {
