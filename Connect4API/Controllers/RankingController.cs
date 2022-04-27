@@ -19,9 +19,9 @@ public class RankingController : ControllerBase
 
     // GET: api/<RankingController>
     [HttpGet("GetPlayerRank")]
-    public int Get(Player playerRank)
+    public int Get(int playerId)
     {
-        return _dl.GetPlayerRank(playerRank);
+        return _dl.GetPlayerRank(playerId);
     }
 
     [HttpGet("GetAllPlayerRanks")]
