@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Model;
+using DL;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +10,21 @@ namespace Connect4API.Controllers
     [ApiController]
     public class LobbyController : ControllerBase
     {
-        // GET: api/<LobbyController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        private readonly ILogger<LobbyController> _logger;
 
-        // GET api/<LobbyController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        private readonly IDBRepo _dl;
+
+        public LobbyController(IDBRepo dl, ILogger<LobbyController> logger)
         {
-            return "value";
+            _dl = dl;
+            _logger = logger;
         }
 
         // POST api/<LobbyController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Lobby Post(Lobby lobbyToCreate)
         {
-        }
-
-        // PUT api/<LobbyController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<LobbyController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return _dl.CreateLobby(lobbyToCreate);
         }
     }
 }
