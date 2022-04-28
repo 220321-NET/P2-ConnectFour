@@ -4,6 +4,7 @@ appsettings.json
 appsettings.Development.json
 
 ## Ignore VSCode
+## we dont need this
 .vscode
 
 ## Ignore Visual Studio temporary files, build results, and
