@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 namespace Model;
-
 public class Piece
 {
     [Key]
