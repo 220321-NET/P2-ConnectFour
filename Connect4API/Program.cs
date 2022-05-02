@@ -13,6 +13,16 @@ builder.Host.UseSerilog(
     .WriteTo.File("../logs/Connect4Logs.txt", rollingInterval: RollingInterval.Day)
 );
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins("*")
+                  .AllowAnyHeader();
+        });
+});
+
 builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
