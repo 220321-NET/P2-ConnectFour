@@ -23,7 +23,7 @@ public class PlayerController : ControllerBase
         return _dl.GetPlayer(username);
     }
 
-    [HttpGet("GetPlayer/{playerid}")]
+    [HttpGet("GetPlayerbyId/{playerid}")]
     public Player Get(int playerid)
     {
         return _dl.GetPlayerbyId(playerid);
