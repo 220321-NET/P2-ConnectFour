@@ -8,13 +8,13 @@ namespace Connect4API.Controllers;
 [Route("[controller]")]
 public class PlayerController : ControllerBase
 {
-    private readonly ILogger<PlayerController>_logger;
+    private readonly ILogger<PlayerController> _logger;
     private readonly IDBRepo _dl;
 
     public PlayerController(IDBRepo dl, ILogger<PlayerController> logger)
     {
         _dl = dl;
-        _logger =logger;
+        _logger = logger;
     }
     //Retrieves player profile before game
     [HttpGet("GetPlayer/{username}")]
@@ -22,6 +22,13 @@ public class PlayerController : ControllerBase
     {
         return _dl.GetPlayer(username);
     }
+
+    [HttpGet("GetPlayer/{playerid}")]
+    public Player Get(int playerid)
+    {
+        return _dl.GetPlayerbyId(playerid);
+    }
+
     //Retrieves leaderboard
     [HttpGet("GetAllPlayers")]
     public List<Player> GetAll()

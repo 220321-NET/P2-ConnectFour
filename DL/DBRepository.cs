@@ -52,6 +52,11 @@ public class DBRepository : IDBRepo
         return _context.Players!.FirstOrDefault(player => player.Username == username)!;
     }
 
+    public Player GetPlayerbyId(int playerid)
+    {
+        return _context.Players!.FirstOrDefault(player => player.PlayerID == playerid)!;
+    }
+
     //Leaderboards
     public List<Player> GetAllPlayers()
     {

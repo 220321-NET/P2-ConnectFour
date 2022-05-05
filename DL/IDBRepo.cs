@@ -29,6 +29,7 @@ public interface IDBRepo
 
     //Searching player profile before game 
     public Player GetPlayer(string username);
+    public Player GetPlayerbyId(int playerid);
 
     //Leaderboards
     public List<Player> GetAllPlayers();
