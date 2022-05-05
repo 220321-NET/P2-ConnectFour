@@ -29,13 +29,6 @@ public class RankingController : ControllerBase
         return _dl.GetAllPlayerRanks();
     }
 
-    // // POST api/<RankingController>
-    // [HttpPost]
-    // public void Post([FromBody] string value)
-    // {
-    //      # Might be implemented in a player controller due to rank record creation is tied to a Player Property
-    // }
-
     // PUT api/<RankingController>/Player Object
     [HttpPut]
     public void Put([FromBody] Ranking rankToUpdate)
