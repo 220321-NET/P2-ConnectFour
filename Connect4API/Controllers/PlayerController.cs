@@ -41,4 +41,10 @@ public class PlayerController : ControllerBase
     {
         _dl.CreatePlayer(player);
     }
+
+    [HttpPut("UpdatePlayer")]
+    public void Put(Player player)
+    {
+        _dl.UpdatePlayer(player);
+    }
 }

@@ -34,6 +34,8 @@ public interface IDBRepo
     //Leaderboards
     public List<Player> GetAllPlayers();
 
+    public void UpdatePlayer(Player player);
+
     //Handles signup
     public Player CreatePlayer(Player playerToCreate);
 

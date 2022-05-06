@@ -81,6 +81,13 @@ public class DBRepository : IDBRepo
         return playerToCreate;
     }
 
+    public void UpdatePlayer(Player player)
+    {
+        _context.Players!.Update(player);
+        _context.SaveChanges();
+        _context.ChangeTracker.Clear();
+    }
+
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
 
