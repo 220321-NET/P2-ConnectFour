@@ -38,7 +38,7 @@ public class RankingController : ControllerBase
     // PUT api/<RankingController>/Player Object
     [EnableCors("_myAllowSpecificOrigins")]
     [HttpPut]
-    public void Put([FromBody] Ranking rankToUpdate)
+    public void Put(Ranking rankToUpdate)
     {
         _dl.UpdateRank(rankToUpdate);
     }
