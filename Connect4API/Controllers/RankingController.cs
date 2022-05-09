@@ -18,7 +18,7 @@ public class RankingController : ControllerBase
     }
 
     // GET: api/<RankingController>
-    [HttpGet("GetPlayerRank")]
+    [HttpGet("GetPlayerRank/{playerId}")]
     public int Get(int playerId)
     {
         return _dl.GetPlayerRank(playerId);
