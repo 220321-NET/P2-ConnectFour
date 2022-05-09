@@ -52,13 +52,13 @@ The user should be able to select which space to drop disc (turn based).
 
 The user wins when they get 4 discs in a row and the scores are added to user profile.
 
-The user should be able to view rankings showing the highest scores.
+The user should be able to view rankings sorted by high to low scores.
 
-The user should be able to see the rankings after the game is finished.
+The user should be able to see the updated rankings after the game is finished.
 
-Leaderboard scores will be based on wins.
+Leaderboard scores will be based on wins and updated at the end of matches.
 
-The user should be able to share wins on social media platforms (screenshot final board and post to social)
+All needed Data will be persistent in a Database
 
 ## <b>Stretch Goals</b>
 
@@ -93,6 +93,8 @@ ASP.net
 ADO.net
 
 Gravatar
+
+xUnit/Moq Backend Testing
 
 ## <b>Tables</b>
 
