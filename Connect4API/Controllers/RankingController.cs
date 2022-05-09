@@ -1,6 +1,7 @@
 ﻿using Model;
 using DL;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 
 namespace Connect4API.Controllers;
 
@@ -18,10 +19,15 @@ public class RankingController : ControllerBase
     }
 
     // GET: api/<RankingController>
-    [HttpGet("GetPlayerRank")]
+    [HttpGet("GetPlayerRank/{playerId}")]
     public int Get(int playerId)
     {
         return _dl.GetPlayerRank(playerId);
+    }
+
+    [HttpGet("GetRank/{playerId}")]
+    public Ranking GetRank(int playerId) {
+        return _dl.GetFullRanking(playerId);
     }
 
     [HttpGet("GetAllPlayerRanks")]
@@ -30,8 +36,9 @@ public class RankingController : ControllerBase
     }
 
     // PUT api/<RankingController>/Player Object
+    [EnableCors("_myAllowSpecificOrigins")]
     [HttpPut]
-    public void Put([FromBody] Ranking rankToUpdate)
+    public void Put(Ranking rankToUpdate)
     {
         _dl.UpdateRank(rankToUpdate);
     }

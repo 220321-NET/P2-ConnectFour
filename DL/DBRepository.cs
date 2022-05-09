@@ -36,6 +36,11 @@ public class DBRepository : IDBRepo
         return _context.Rankings!.AsNoTracking().FirstOrDefault(rank => rank.PlayerID == playerId)!.Rank;
     }
 
+    public Ranking GetFullRanking(int playerId)
+    {
+        return _context.Rankings!.AsNoTracking().FirstOrDefault(rank => rank.PlayerID == playerId)!;
+    }
+
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
 

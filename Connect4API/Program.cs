@@ -2,6 +2,8 @@ using DL;
 using Serilog;
 using Microsoft.EntityFrameworkCore;
 
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,13 +17,27 @@ builder.Host.UseSerilog(
 
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(
-        policy =>
-        {
-            policy.WithOrigins("*")
-                  .AllowAnyHeader();
-        });
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy  =>
+                      {
+                          policy.WithOrigins("http://localhost:4200, http://localhost:5205, http://localhost:9876")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowAnyOrigin();
+                      });
 });
+
+// builder.Services.AddCors(options =>
+// {
+//     options.AddDefaultPolicy(
+//         policy =>
+//         {
+//             policy.WithOrigins("*")
+//                   .AllowAnyHeader()
+//                   .AllowAnyMethod()
+//                   .AllowAnyOrigin();
+//         });
+// });
 
 builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -33,7 +49,8 @@ builder.Services.AddScoped<IDBRepo, DBRepository>();
 
 var app = builder.Build();
 
-app.UseCors();
+// app.UseCors();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -41,6 +58,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseHttpsRedirection();
 
