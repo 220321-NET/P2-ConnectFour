@@ -1,6 +1,7 @@
 ﻿using Model;
 using DL;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 
 namespace Connect4API.Controllers;
 
@@ -35,6 +36,7 @@ public class RankingController : ControllerBase
     }
 
     // PUT api/<RankingController>/Player Object
+    [EnableCors("_myAllowSpecificOrigins")]
     [HttpPut]
     public void Put([FromBody] Ranking rankToUpdate)
     {

@@ -1,7 +1,6 @@
 using DL;
 using Serilog;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Cors;
 
 var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
