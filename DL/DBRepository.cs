@@ -28,17 +28,17 @@ public class DBRepository : IDBRepo
 
     public List<Ranking> GetAllPlayerRanks()
     {
-        return _context.Rankings!.AsNoTracking().ToList();
+        return _context.Rankings!.ToList();
     }
 
     public int GetPlayerRank(int playerId)
     {
-        return _context.Rankings!.AsNoTracking().FirstOrDefault(rank => rank.PlayerID == playerId)!.Rank;
+        return _context.Rankings!.FirstOrDefault(rank => rank.PlayerID == playerId)!.Rank;
     }
 
     public Ranking GetFullRanking(int playerId)
     {
-        return _context.Rankings!.AsNoTracking().FirstOrDefault(rank => rank.PlayerID == playerId)!;
+        return _context.Rankings!.FirstOrDefault(rank => rank.PlayerID == playerId)!;
     }
 
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
