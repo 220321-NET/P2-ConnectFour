@@ -24,6 +24,11 @@ public class RankingController : ControllerBase
         return _dl.GetPlayerRank(playerId);
     }
 
+    [HttpGet("GetRank/{playerId}")]
+    public Ranking GetRank(int playerId) {
+        return _dl.GetFullRanking(playerId);
+    }
+
     [HttpGet("GetAllPlayerRanks")]
     public List<Ranking> GetAll() {
         return _dl.GetAllPlayerRanks();

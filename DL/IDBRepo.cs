@@ -17,6 +17,8 @@ public interface IDBRepo
 
     public int GetPlayerRank(int playerId);
 
+    public Ranking GetFullRanking(int playerId);
+
     //_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_/~\_
 
 
