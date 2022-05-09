@@ -48,7 +48,7 @@ The user should be able to access settings their profile page (Gravatar).
 
 The user should be able view other player profile.
 
-The user should be able to select which space to drop disc (turn based).
+The user should be able to select which column space to drop a disc (turn based).
 
 The user wins when they get 4 discs in a row and the scores are added to user profile.
 
@@ -61,6 +61,8 @@ Leaderboard scores will be based on wins and updated at the end of matches.
 All needed Data will be persistent in a Database
 
 ## <b>Stretch Goals</b>
+
+The user should be able to share wins on social media platforms (screenshot final board and post to social)
 
 The user (admin) could add new colors and block players.
 
